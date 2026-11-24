@@ -50,3 +50,13 @@ input[type=date],input[type=time]{color-scheme:dark}
 .grade .cartao{margin:0}
 .grade a.cartao:hover{border-color:var(--marca-forte)}
 @media (max-width:560px){th:nth-child(3),td:nth-child(3){display:none}.topo nav{gap:10px;font-size:14px}}
+/* "meu voo": cartão do voo carregado — contorno menta que pulsa e se acomoda */
+#resultado{position:relative;scroll-margin-top:16px;outline:none}
+.selo-ok{display:inline-block;margin:0 0 6px;padding:2px 10px;border-radius:999px;background:var(--marca-fundo);color:var(--marca);font:600 12px/1.8 'Space Mono',monospace}
+.destaque{animation:acende 2.4s ease-out 1;border-color:var(--marca)}
+.destaque::after{content:"";position:absolute;inset:-6px;border-radius:22px;border:2px solid var(--marca);pointer-events:none;animation:onda 1.2s ease-out 2}
+.destaque .selo-ok{animation:surge .5s ease-out 1}
+@keyframes acende{0%{box-shadow:0 0 0 0 rgba(100,233,166,.55)}25%{box-shadow:0 0 0 10px rgba(100,233,166,.18)}100%{box-shadow:0 0 0 1px rgba(100,233,166,.35)}}
+@keyframes onda{0%{opacity:.9;transform:scale(.98)}100%{opacity:0;transform:scale(1.04)}}
+@keyframes surge{0%{opacity:0;transform:translateY(-6px)}100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.destaque,.destaque::after,.destaque .selo-ok{animation:none}}

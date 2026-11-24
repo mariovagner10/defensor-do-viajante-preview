@@ -127,19 +127,44 @@
                   : 'A malha da ANAC deste dia ainda não saiu (sai poucos dias antes). Informe os horários do bilhete para o calendário.');
     $('resultado').classList.remove('oculto');
     if (!MV.estatico) $('btn-ics').href = icsHref();
+    foco();
+  }
+
+  // leva a pessoa até o cartão do voo e acende o contorno: deixa claro que carregou ESTE voo
+  function foco() {
+    var card = $('resultado');
+    $('r-ok').textContent = '✓ Voo ' + atual.codigo + ' carregado';
+    card.classList.remove('destaque');
+    void card.offsetWidth;  // reinicia a animação a cada consulta
+    card.classList.add('destaque');
+    var reduz = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var topo = card.getBoundingClientRect().top + window.pageYOffset - 16;
+    window.scrollTo({top: topo, behavior: reduz ? 'auto' : 'smooth'});
+    card.setAttribute('tabindex', '-1');
+    setTimeout(function () { card.focus({preventScroll: true}); }, reduz ? 0 : 450);
+  }
+
+  function carregando(sim) {
+    var b = $('f-voo').querySelector('button[type=submit]');
+    b.disabled = sim;
+    b.textContent = sim ? 'Consultando…' : 'Ver meu voo';
   }
 
   $('f-voo').addEventListener('submit', function (ev) {
     ev.preventDefault(); $('msg-voo').classList.add('oculto');
+    carregando(true);
+    var fim = function () { carregando(false); };
     if (MV.estatico) {
       consultaEstatica($('codigo').value, $('data').value).then(exibe)
-        .catch(function (e) { mostra($('msg-voo'), typeof e === 'string' ? e : 'Não foi possível consultar.'); });
+        .catch(function (e) { mostra($('msg-voo'), typeof e === 'string' ? e : 'Não foi possível consultar.'); })
+        .then(fim);
       return;
     }
     var p = new URLSearchParams({codigo: $('codigo').value, data: $('data').value});
     fetch(R + '/api/voo?' + p).then(function (r) { return r.json().then(function (j) { return [r.ok, j]; }); })
       .then(function (x) { if (!x[0]) { mostra($('msg-voo'), x[1].detail || 'Não foi possível consultar.'); return; } exibe(x[1]); })
-      .catch(function () { mostra($('msg-voo'), 'Erro de conexão. Tente de novo.'); });
+      .catch(function () { mostra($('msg-voo'), 'Erro de conexão. Tente de novo.'); })
+      .then(fim);
   });
 
   $('btn-ics').addEventListener('click', function (ev) {
