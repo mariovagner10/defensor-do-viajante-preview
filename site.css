@@ -1,0 +1,52 @@
+/* Identidade do Defensor do Viajante (cores e fontes de defensordoviajante.com.br) */
+:root{--fundo:#0C1210;--fundo-2:#0F1815;--cartao:#14201B;--cartao-2:#18271F;--texto:#EAF2ED;--suave:#93A79C;--fraco:#5E7268;
+--linha:#233A30;--marca:#64E9A6;--marca-forte:#3BC183;--marca-fundo:#1E3A2C;--tinta-btn:#08130D;--ambar:#FFC46B;--coral:#FF7A66;--wa:#64E9A6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 'Inter',system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--fundo);color:var(--texto);-webkit-font-smoothing:antialiased}
+a{color:var(--marca)}
+a:hover{color:var(--marca-forte)}
+main{max-width:860px;margin:0 auto;padding:16px 16px 104px}
+h1,h2,h3,.marca{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.12}
+h1{font-size:clamp(1.8rem,5vw,2.6rem);margin:20px 0 10px}
+h2{font-size:1.35rem;margin:28px 0 10px}
+h3{font-size:1.08rem;margin:18px 0 6px}
+.sub{color:var(--suave);margin-top:0}
+.rascunho{background:var(--ambar);color:var(--tinta-btn);text-align:center;font:600 13px/1.4 'Space Mono',monospace;padding:7px 12px}
+.topo{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;max-width:860px;margin:0 auto;padding:14px 16px;border-bottom:1px solid var(--linha)}
+.marca{font-weight:700;text-decoration:none;color:var(--texto);font-size:1.15rem;display:flex;align-items:center;gap:10px}
+.marca::before{content:"";width:28px;height:28px;border-radius:8px;background:var(--cartao) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20 60l50-26-16 28-9-4.5L34 72z' fill='%2364E9A6'/%3E%3C/svg%3E") center/80% no-repeat}
+.topo nav{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:15px}
+.topo nav a{color:var(--suave);text-decoration:none}
+.topo nav a:hover{color:var(--texto)}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:18px;padding:18px;margin:14px 0}
+.base{color:var(--fraco);font:13px/1.5 'Space Mono',monospace;margin-top:8px}
+.btn,.topo nav a.btn{display:inline-block;background:var(--marca);color:var(--tinta-btn);text-decoration:none;border:0;border-radius:12px;padding:12px 20px;font-weight:600;font-size:16px;cursor:pointer}
+.btn:hover,.topo nav a.btn:hover{background:var(--marca-forte);color:var(--tinta-btn)}
+.btn-pequeno,.topo nav a.btn-pequeno{padding:7px 14px;font-size:14px}
+.btn-sec{background:transparent;color:var(--marca);border:1px solid var(--marca)}
+.btn-sec:hover{background:var(--marca-fundo);color:var(--marca)}
+.cta-fixo{position:fixed;left:0;right:0;bottom:0;padding:12px 16px;background:linear-gradient(transparent,var(--fundo) 35%);text-align:center}
+.cta-fixo .btn{width:100%;max-width:440px;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.rodape{max-width:860px;margin:0 auto;padding:18px 16px 120px;color:var(--suave);font-size:13px;border-top:1px solid var(--linha)}
+.rodape strong{color:var(--texto)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--linha);vertical-align:top}
+th{color:var(--suave);font-weight:500}
+.tag{display:inline-block;border-radius:6px;padding:1px 8px;font:600 12px/1.6 'Space Mono',monospace}
+.tag-cancelled{background:var(--coral);color:var(--tinta-btn)}
+.tag-delayed{background:var(--ambar);color:var(--tinta-btn)}
+.tag-diverted{background:#B9A6FF;color:var(--tinta-btn)}
+.fatos li{margin:5px 0}
+.aviso{background:var(--marca-fundo);border:1px solid var(--linha);border-radius:12px;padding:10px 12px;font-size:14px}
+form label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;font:inherit;padding:11px;border:1px solid var(--linha);border-radius:10px;background:var(--fundo-2);color:var(--texto)}
+input:focus{outline:2px solid var(--marca);outline-offset:1px}
+input[type=date],input[type=time]{color-scheme:dark}
+.linha{display:flex;gap:10px;flex-wrap:wrap}.linha>*{flex:1 1 160px}
+.check{display:flex;gap:8px;align-items:flex-start;font-weight:400}.check input{width:auto;margin-top:6px;accent-color:var(--marca)}
+.oculto{display:none}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.grade .cartao{margin:0}
+.grade a.cartao:hover{border-color:var(--marca-forte)}
+@media (max-width:560px){th:nth-child(3),td:nth-child(3){display:none}.topo nav{gap:10px;font-size:14px}}

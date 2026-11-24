@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alerta do meu voo: aviso se atrasar ou cancelar, com seus direitos | Defensor do Viajante</title>
+<meta name="description" content="Vai viajar? Coloque o voo no calendário com lembretes e receba um aviso por e-mail ou WhatsApp se ele atrasar, for cancelado ou alternado, já com os seus direitos.">
+<meta name="robots" content="noindex, nofollow"><link rel="canonical" href="https://mariovagner10.github.io/defensor-do-viajante-preview/meu-voo/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230E1613'/%3E%3Cpath d='M20 60l50-26-16 28-9-4.5L34 72z' fill='%2364E9A6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/defensor-do-viajante-preview/site.css">
+</head>
+<body>
+<div class="rascunho">PRÉVIA PARA REVISÃO — conteúdo aguardando revisão do advogado responsável. Não indexado.</div><header class="topo">
+  <a class="marca" href="/defensor-do-viajante-preview/">Defensor do Viajante</a>
+  <nav>
+    <a href="/defensor-do-viajante-preview/direitos/">Seus direitos</a>
+    <a href="/defensor-do-viajante-preview/meu-voo/">Alerta do meu voo</a>
+    <a class="btn btn-pequeno" href="/defensor-do-viajante-preview/fale-com-um-advogado/">Fale com um advogado</a>
+  </nav>
+</header>
+<main>
+<h1>Alerta do meu voo</h1>
+<p class="sub">Grátis. Coloque o voo no seu calendário com lembretes e, se quiser, receba um aviso se ele atrasar, for cancelado ou alternado, já com o que a companhia deve a você.</p>
+
+<form id="f-voo" class="cartao" autocomplete="off">
+  <div class="linha">
+    <div><label for="codigo">Voo</label><input id="codigo" name="codigo" placeholder="ex.: AD2837, G31238, LA3422" required></div>
+    <div><label for="data">Data da partida</label><input id="data" name="data" type="date" required></div>
+  </div>
+  <p><button class="btn" type="submit">Ver meu voo</button></p>
+  <p id="msg-voo" class="aviso oculto"></p>
+</form>
+
+<section id="resultado" class="cartao oculto">
+  <h2 id="r-titulo"></h2>
+  <p id="r-rota"></p>
+  <p id="r-mon" class="aviso"></p>
+
+  <div id="manual" class="oculto">
+    <p>Ainda não temos este voo na malha da ANAC (ela sai poucos dias antes). Informe os horários do bilhete para o calendário:</p>
+    <div class="linha">
+      <div><label for="origem">Origem (sigla)</label><input id="origem" maxlength="3" placeholder="GRU"></div>
+      <div><label for="destino">Destino (sigla)</label><input id="destino" maxlength="3" placeholder="POA"></div>
+      <div><label for="partida">Partida</label><input id="partida" type="time"></div>
+      <div><label for="chegada">Chegada</label><input id="chegada" type="time"></div>
+    </div>
+  </div>
+
+  <h3>1. Coloque no calendário</h3>
+  <p>Lembrete 3 h antes ("confira se o voo mudou") e, 40 min depois da chegada, "sua mala chegou? teve atraso?", com o que fazer.</p>
+  <p><a id="btn-ics" class="btn btn-sec" href="#">Adicionar ao calendário (.ics)</a></p>
+
+  <h3>2. Receba um aviso se o voo tiver problema</h3>
+  <form id="f-alerta">
+    <label>Por onde?</label>
+    <div class="linha">
+      <label class="check"><input type="radio" name="canal" value="whatsapp" checked> WhatsApp</label>
+      <label class="check"><input type="radio" name="canal" value="email"> E-mail</label>
+    </div>
+    <label for="contato" id="l-contato">Seu WhatsApp (DDD + número)</label>
+    <input id="contato" name="destino" required inputmode="tel" placeholder="(51) 99999-0000">
+    <label class="check"><input type="checkbox" id="consent" required> Quero receber avisos sobre este voo de Defensor do Viajante. Sei que posso cancelar a qualquer momento e que o pedido é apagado 30 dias depois do voo (<a href="/defensor-do-viajante-preview/privacidade/" target="_blank">privacidade</a>).</label>
+    <p><button class="btn" type="submit">Quero o alerta</button></p>
+    <p id="msg-alerta" class="aviso oculto"></p>
+  </form>
+</section>
+
+<section class="cartao">
+  <h2>Se der problema no aeroporto</h2>
+  <ul>
+    <li>Mais de 2 h de espera: alimentação. Mais de 4 h: hotel com traslado se houver pernoite.</li>
+    <li>Cancelado: você escolhe reacomodação, reembolso integral ou outro transporte.</li>
+    <li>Mala não chegou: registre no balcão antes de sair da sala de desembarque.</li>
+  </ul>
+  <p><a href="/defensor-do-viajante-preview/direitos/">Todos os direitos</a></p>
+</section>
+
+<script>window.MV = {"estatico": true, "raiz": "/defensor-do-viajante-preview", "base": "https://mariovagner10.github.io/defensor-do-viajante-preview", "resumo": "Mais de 2 h de espera: alimentação. Mais de 4 h: hotel com traslado se houver pernoite, e você escolhe reacomodação, reembolso ou outro transporte.", "contato": "https://mariovagner10.github.io/defensor-do-viajante-preview/fale-com-um-advogado/"};</script>
+<script src="/defensor-do-viajante-preview/meu-voo.js"></script>
+</main>
+<aside class="cta-fixo">
+  <a class="btn btn-wa" href="https://wa.me/5551996435690?text=Ol%C3%A1%21%20Tive%20um%20problema%20com%20um%20voo%20e%20quero%20saber%20dos%20meus%20direitos." rel="nofollow noopener" target="_blank">Fale com um advogado (WhatsApp)</a>
+</aside>
+<footer class="rodape">
+  <p><strong>Defensor do Viajante</strong> · Fochesatto &amp; Zanatta Sociedade de Advogados (OAB/RS 6.709, CNPJ 26.741.469/0001-75)</p>
+  <p>Advogado responsável: Thomaz Fochesatto, OAB/RS 88.839 · Rua César Lombroso 49, cj. 301 · Porto Alegre/RS · <a href="https://defensordoviajante.com.br" rel="noopener" target="_blank">defensordoviajante.com.br</a></p>
+  <p>Conteúdo informativo, não substitui consulta. Dados de voos coletados de fontes públicas (painéis dos aeroportos, malha da ANAC, boletins METAR) e podem conter erros. Atualizado em 23/11/2026 21:05.</p>
+  <p><a href="/defensor-do-viajante-preview/privacidade/">Privacidade e dados pessoais</a> · <a href="/defensor-do-viajante-preview/direitos/">Direitos do passageiro</a> · <a href="/defensor-do-viajante-preview/meu-voo/">Alerta do meu voo</a></p>
+</footer>
+</body>
+</html>
